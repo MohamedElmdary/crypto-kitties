@@ -9,6 +9,16 @@
         </div>
 
         <!-- Cat Ears -->
-        <div [class]="'cat__ear ear-' + i" *ngFor="let _ of [null, null]; let i = index"></div>
+        <div [class]="'cat__ear ear-' + i" *ngFor="let _ of [null, null]; let i = index">
+            <span class="cat__ear-pupils"></span>
+        </div>
+
+        <!-- Cat Nose -->
+        <div class="cat__nose"></div>
+
+        <!-- Cat Mouse -->
+        <div class="cat__mouse">
+            <span class="cat__mouse-pupils" *ngFor="let _ of [null, null]"></span>
+        </div>
     </div>
 </div>

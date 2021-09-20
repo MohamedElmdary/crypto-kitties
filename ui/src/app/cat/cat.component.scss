@@ -44,14 +44,59 @@
     right: -$s / 16.5;
     border-radius: 90% 0;
     background-color: steelblue;
-    width: 100px;
-    height: 100px;
+    width: $s;
+    height: $s;
     z-index: -1;
+
+    &-pupils {
+      $s: 80px;
+      position: absolute;
+      border-radius: 90% 0;
+      background-color: brown;
+      width: $s;
+      height: $s;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
 
     &.ear-1 {
       right: auto;
       left: -$s / 16.5;
       transform: rotate(90deg);
+    }
+  }
+
+  &nose {
+    $s: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -$s / 2 + 10px) rotate(-135deg);
+    width: $s;
+    height: $s;
+    background-color: white;
+    border-radius: 0 0 100% 0;
+  }
+
+  &mouse {
+    $s: 20px;
+    width: $s * 2;
+    height: $s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -$s / 2 + 30px);
+
+    &-pupils {
+      height: $s;
+      width: $s;
+      display: inline-block;
+      border-radius: 50%;
+      border: 2px solid black;
+      border-top-color: transparent;
+      border-right-color: transparent;
+      transform: rotate(-45deg);
     }
   }
 }

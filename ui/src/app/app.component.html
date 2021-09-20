@@ -1,2 +1,33 @@
-<div style="margin: 50px;">
-    <app-cat></app-cat></div>
+<div style="margin: 50px">
+  <app-cat
+    [body]="body.value"
+    [mouth]="mouth.value"
+    [eye]="eye.value"
+    [ear]="ear.value"
+  ></app-cat>
+</div>
+
+<br />
+<br />
+<br />
+<form [formGroup]="colors">
+  <div>
+    <p>head and body - {{ body.value }}</p>
+    <input type="range" min="10" max="98" formControlName="body" />
+  </div>
+
+  <div>
+    <p>mouth and belly and tail - {{ mouth.value }}</p>
+    <input type="range" min="10" max="98" formControlName="mouth" />
+  </div>
+
+  <div>
+    <p>eyes - {{ eye.value }}</p>
+    <input type="range" min="10" max="98" formControlName="eye" />
+  </div>
+
+  <div>
+    <p>ears and paw - {{ ear.value }}</p>
+    <input type="range" min="10" max="98" formControlName="ear" />
+  </div>
+</form>

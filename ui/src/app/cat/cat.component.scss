@@ -1,0 +1,57 @@
+.cat__ {
+  &face {
+    $s: 200px;
+    height: $s;
+    width: $s;
+    background-color: rgba(255, 224, 122);
+    border-radius: 50%;
+    position: relative;
+  }
+
+  &eye {
+    $s: 50px;
+    $m: 30px;
+    background-color: white;
+    border-radius: 50%;
+    height: $s;
+    width: $s;
+    position: absolute;
+    top: $m;
+    left: $m;
+
+    &.eye-1 {
+      left: auto;
+      right: $m;
+    }
+
+    &-pupils {
+      $s: 30px;
+      background-color: #333;
+      height: $s;
+      width: $s;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-40%, -40%);
+    }
+  }
+
+  &ear {
+    $s: 100px;
+    position: absolute;
+    top: 5px;
+    right: -$s / 16.5;
+    border-radius: 90% 0;
+    background-color: steelblue;
+    width: 100px;
+    height: 100px;
+    z-index: -1;
+
+    &.ear-1 {
+      right: auto;
+      left: -$s / 16.5;
+      transform: rotate(90deg);
+    }
+  }
+}

@@ -1,0 +1,14 @@
+<div class="cat">
+
+    <!-- Cat Face -->
+    <div class="cat__face">
+        
+        <!-- Cat Eyes -->
+        <div [class]="'cat__eye eye-' + i" *ngFor="let _ of [null, null]; let i = index">
+            <span class="cat__eye-pupils"></span>
+        </div>
+
+        <!-- Cat Ears -->
+        <div [class]="'cat__ear ear-' + i" *ngFor="let _ of [null, null]; let i = index"></div>
+    </div>
+</div>

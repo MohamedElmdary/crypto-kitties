@@ -4,13 +4,15 @@
     [mouth]="mouth.value"
     [eye]="eye.value"
     [ear]="ear.value"
+    [eyeShape]="eyeShape.value"
+    [decorationShape]="decorationShape.value"
   ></app-cat>
 </div>
 
 <br />
 <br />
 <br />
-<form [formGroup]="colors">
+<form [formGroup]="catForm">
   <div>
     <p>head and body - {{ body.value }}</p>
     <input type="range" min="10" max="98" formControlName="body" />
@@ -30,4 +32,27 @@
     <p>ears and paw - {{ ear.value }}</p>
     <input type="range" min="10" max="98" formControlName="ear" />
   </div>
+
+  <div>
+    <p>Eyes Shape - {{ eyeShape.value }}</p>
+    <input type="range" min="0" max="2" formControlName="eyeShape" />
+  </div>
+
+  <div>
+    <p>Decoration Shape - {{ decorationShape.value }}</p>
+    <input type="range" min="0" max="3" formControlName="decorationShape" />
+  </div>
 </form>
+
+<div>
+  <span>DNA </span>
+  <span>{{ body.value }} </span>
+  <span>{{ mouth.value }} </span>
+  <span>{{ eye.value }} </span>
+  <span>{{ ear.value }} </span>
+  <span> | </span>
+  <span>{{ eyeShape.value }} </span>
+  <span>{{ decorationShape.value }} </span>
+  <span>-{{ eye.value }} </span>
+  <span>-{{ ear.value }} </span>
+</div>

@@ -17,16 +17,24 @@
   </div>
 
   <div id="head" class="cat__head" [ngStyle]="{ backgroundColor: bodyAndHead }">
-    <div id="midDot" class="cat__head-dots">
-      <div id="leftDot" class="cat__head-dots_first"></div>
-      <div id="rightDot" class="cat__head-dots_second"></div>
+    <div id="midDot" class="cat__head-dots" *ngIf="decorationStyle as style">
+      <div
+        id="leftDot"
+        class="cat__head-dots_first"
+        [ngStyle]="style.left"
+      ></div>
+      <div
+        id="rightDot"
+        class="cat__head-dots_second"
+        [ngStyle]="style.right"
+      ></div>
     </div>
     <div class="cat__eye">
       <div class="cat__eye--left">
-        <span class="pupil-left" [ngStyle]="{ backgroundColor: eyes }"></span>
+        <span class="pupil-left" [ngStyle]="eyeStyle"></span>
       </div>
       <div class="cat__eye--right">
-        <span class="pupil-right" [ngStyle]="{ backgroundColor: eyes }"></span>
+        <span class="pupil-right" [ngStyle]="eyeStyle"></span>
       </div>
     </div>
     <div class="cat__nose"></div>

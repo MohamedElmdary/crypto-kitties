@@ -14,7 +14,10 @@ export class AppComponent {
     eye: [96],
     ear: [10],
     eyeShape: [1],
-    decorationShape: [0]
+    decorationShape: [0],
+    pattern1: [11],
+    pattern2: [12],
+    animate: [1]
   });
 
   get body(): FormControl {
@@ -39,6 +42,18 @@ export class AppComponent {
 
   get decorationShape(): FormControl {
     return this.catForm.get('decorationShape') as FormControl;
+  }
+
+  get pattern1(): FormControl {
+    return this.catForm.get('pattern1') as FormControl;
+  }
+
+  get pattern2(): FormControl {
+    return this.catForm.get('pattern2') as FormControl;
+  }
+
+  get animate(): FormControl {
+    return this.catForm.get('animate') as FormControl;
   }
 
   constructor(private fb: FormBuilder) {}

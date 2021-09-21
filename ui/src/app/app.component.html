@@ -6,6 +6,9 @@
     [ear]="ear.value"
     [eyeShape]="eyeShape.value"
     [decorationShape]="decorationShape.value"
+    [pattern1]="pattern1.value"
+    [pattern2]="pattern2.value"
+    [animate]="animate.value"
   ></app-cat>
 </div>
 
@@ -42,6 +45,21 @@
     <p>Decoration Shape - {{ decorationShape.value }}</p>
     <input type="range" min="0" max="3" formControlName="decorationShape" />
   </div>
+
+  <div>
+    <p>Pattern1 - {{ pattern1.value }}</p>
+    <input type="range" min="10" max="99" formControlName="pattern1" />
+  </div>
+
+  <div>
+    <p>Pattern2 - {{ pattern2.value }}</p>
+    <input type="range" min="10" max="99" formControlName="pattern2" />
+  </div>
+
+  <div>
+    <p>Animate - {{ animate.value }}</p>
+    <input type="range" min="0" max="5" formControlName="animate" />
+  </div>
 </form>
 
 <div>
@@ -53,6 +71,7 @@
   <span> | </span>
   <span>{{ eyeShape.value }} </span>
   <span>{{ decorationShape.value }} </span>
-  <span>-{{ eye.value }} </span>
-  <span>-{{ ear.value }} </span>
+  <span>{{ pattern1.value }} </span>
+  <span>{{ pattern2.value }} </span>
+  <span>{{ animate.value }} </span>
 </div>

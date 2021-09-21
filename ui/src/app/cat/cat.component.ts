@@ -52,6 +52,7 @@ export class CatComponent {
   }
 
   @Input() decorationShape!: number;
+  @Input() pattern2!: keyof typeof colors;
   get decorationStyle() {
     let style: any;
 
@@ -76,10 +77,22 @@ export class CatComponent {
         break;
 
       default:
-        style = {};
+        style = {left: {}, right: {}};
     }
+
+    style.left['backgroundColor'] = '#' + colors[this.pattern2];
+    style.right['backgroundColor'] = '#' + colors[this.pattern2];
 
     return style;
   }
+
+  @Input() pattern1!: keyof typeof colors;
+  get midDecorationStyle() {
+    return {
+      backgroundColor: '#' + colors[this.pattern1]
+    }
+  }
+
+  @Input() animate!: 0 | 1 | 2 | 3 | 4 | 5;
 }
 

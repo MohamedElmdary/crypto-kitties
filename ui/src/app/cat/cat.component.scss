@@ -336,3 +336,25 @@
     transform: rotate(-45deg);
   }
 }
+
+/* Animations */
+
+@keyframes move-head {
+  0%,
+  50%,
+  100% {
+    transform: rotate(0);
+  }
+
+  25% {
+    transform: rotate(5deg);
+  }
+
+  75% {
+    transform: rotate(-5deg);
+  }
+}
+
+.animate {
+  animation: move-head 1s linear infinite;
+}

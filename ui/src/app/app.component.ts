@@ -6,7 +6,7 @@ import { Web3Service } from './web3.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   public catForm = this.fb.group({
@@ -18,7 +18,7 @@ export class AppComponent {
     decorationShape: [0],
     pattern1: [11],
     pattern2: [12],
-    animate: [1]
+    animate: [1],
   });
 
   get body(): FormControl {
@@ -56,20 +56,24 @@ export class AppComponent {
   get animate(): FormControl {
     return this.catForm.get('animate') as FormControl;
   }
-  
+
   get dna(): number {
-    const v = this.body.value.toString() +
-    this.mouth.value.toString() +
-    this.eye.value.toString() +
-    this.ear.value.toString() +
-    this.eyeShape.value.toString() +
-    this.decorationShape.value.toString() +
-    this.pattern1.value.toString() +
-    this.pattern2.value.toString() +
-    this.animate.value.toString();
+    const v =
+      this.body.value.toString() +
+      this.mouth.value.toString() +
+      this.eye.value.toString() +
+      this.ear.value.toString() +
+      this.eyeShape.value.toString() +
+      this.decorationShape.value.toString() +
+      this.pattern1.value.toString() +
+      this.pattern2.value.toString() +
+      this.animate.value.toString();
     return +v;
   }
 
-  constructor(private fb: FormBuilder, public web3Service: Web3Service) {}
+  constructor(private fb: FormBuilder, private web3Service: Web3Service) {}
 
+  createKitty(dna: number): void {
+    this.web3Service.createKittyGen0(dna).subscribe(console.log, console.error);
+  }
 }
